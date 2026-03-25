@@ -81,9 +81,9 @@ const stats = [
 ];
 
 const heroCards = [
-  { value: "114", label: "Complete surahs" },
-  { value: "30", label: "Parts of the Quran" },
-  { value: "Refined", label: "Audiovisual presentation" },
+  { value: "114", label: "Surahs" },
+  { value: "30", label: "Quran Parts" },
+  { value: "Refined", label: "AV Content" },
 ];
 
 const heroBadges = [
@@ -233,7 +233,10 @@ function LargeSectionBadge({ icon: Icon, text }) {
       className="inline-flex max-w-full items-center gap-3 rounded-full border border-white/10 bg-white/10 px-5 py-3 text-base font-bold backdrop-blur-md shadow-[0_6px_18px_rgba(0,0,0,0.14)] sm:px-8 sm:py-4 sm:text-xl lg:text-2xl"
       style={{ color: ACCENT }}
     >
-      <Icon className="h-5 w-5 shrink-0 sm:h-7 sm:w-7" style={{ color: ACCENT }} />
+      <Icon
+        className="h-5 w-5 shrink-0 sm:h-7 sm:w-7"
+        style={{ color: ACCENT }}
+      />
       <span className="truncate">{text}</span>
     </div>
   );
@@ -434,8 +437,7 @@ function HeroAudioPlayer({ isMobile }) {
         const localEnergy = count ? localSum / count / 255 : 0;
         const mixedEnergy = localEnergy * 0.68 + globalEnergy * 0.32;
         const height =
-          MIN_BAR_HEIGHT +
-          mixedEnergy * (MAX_BAR_HEIGHT - MIN_BAR_HEIGHT);
+          MIN_BAR_HEIGHT + mixedEnergy * (MAX_BAR_HEIGHT - MIN_BAR_HEIGHT);
 
         return clamp(height, MIN_BAR_HEIGHT, MAX_BAR_HEIGHT);
       });
@@ -460,7 +462,14 @@ function HeroAudioPlayer({ isMobile }) {
         animationFrameRef.current = null;
       }
     };
-  }, [HALF_BARS, MAX_BAR_HEIGHT, MIN_BAR_HEIGHT, idleBars, isPlaying, isMobile]);
+  }, [
+    HALF_BARS,
+    MAX_BAR_HEIGHT,
+    MIN_BAR_HEIGHT,
+    idleBars,
+    isPlaying,
+    isMobile,
+  ]);
 
   useEffect(() => {
     return () => {
@@ -1049,7 +1058,9 @@ export default function QuranTranslationLandingPage() {
             </motion.div>
 
             {menuOpen && (
-              <div className={`mt-3 rounded-[1.4rem] p-3 md:hidden sm:rounded-[1.6rem] sm:p-4 ${glass}`}>
+              <div
+                className={`mt-3 rounded-[1.4rem] p-3 md:hidden sm:rounded-[1.6rem] sm:p-4 ${glass}`}
+              >
                 <div className="grid gap-2">
                   {navItems.map((item) => (
                     <a
@@ -1099,7 +1110,8 @@ export default function QuranTranslationLandingPage() {
                 variants={fadeUp}
                 className="mt-5 max-w-2xl text-base leading-7 text-white/75 sm:text-lg sm:leading-8 lg:text-xl"
               >
-                Audio and visual channels for translations of Quran meanings in all global languages — a waqf for Allah.
+                Audio and visual channels for translations of Quran meanings in
+                all global languages — a waqf for Allah.
               </motion.p>
 
               <motion.div
@@ -1158,10 +1170,15 @@ export default function QuranTranslationLandingPage() {
                     }
                     className="rounded-3xl border border-white/10 bg-white/10 p-3 text-center backdrop-blur-md shadow-[0_6px_16px_rgba(0,0,0,0.12)] sm:p-4"
                   >
-                    <div className="text-xl font-black sm:text-2xl" style={{ color: ACCENT }}>
+                    <div
+                      className="text-xl font-black sm:text-2xl"
+                      style={{ color: ACCENT }}
+                    >
                       {item.value}
                     </div>
-                    <div className="mt-2 text-xs text-white/70 sm:text-sm">{item.label}</div>
+                    <div className="mt-2 text-xs text-white/70 sm:text-sm">
+                      {item.label}
+                    </div>
                   </motion.div>
                 ))}
               </motion.div>
@@ -1175,13 +1192,19 @@ export default function QuranTranslationLandingPage() {
             >
               <motion.div
                 animate={isMobile ? {} : { y: [0, -10, 0] }}
-                transition={isMobile ? {} : { duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                transition={
+                  isMobile
+                    ? {}
+                    : { duration: 7, repeat: Infinity, ease: "easeInOut" }
+                }
                 className={`relative mx-auto max-w-2xl p-3 sm:p-4 ${softCard}`}
               >
                 <div className="rounded-[1.6rem] border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-4 sm:p-6">
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                     <div>
-                      <p className="text-xs text-white/60 sm:text-sm">Current language</p>
+                      <p className="text-xs text-white/60 sm:text-sm">
+                        Current language
+                      </p>
                       <h3 className="mt-1 text-xl font-bold sm:text-2xl">
                         Quran in Arabic
                       </h3>
@@ -1194,7 +1217,10 @@ export default function QuranTranslationLandingPage() {
                   <div className="mt-6 rounded-[1.4rem] border border-white/10 bg-[rgba(15,23,42,0.70)] p-4 sm:mt-8 sm:p-6">
                     <div className="mb-4 flex items-start gap-3 text-sm text-white/80 sm:items-center sm:text-base">
                       <Headphones className="mt-0.5 h-5 w-5 shrink-0 text-[#E7D8BF] sm:mt-0" />
-                      <span>Listen to the recitation with a visual display of Quran meanings</span>
+                      <span>
+                        Listen to the recitation with a visual display of Quran
+                        meanings
+                      </span>
                     </div>
 
                     {!isMobile && (
@@ -1202,7 +1228,9 @@ export default function QuranTranslationLandingPage() {
                         {[65, 88, 42].map((w, idx) => (
                           <motion.div
                             key={idx}
-                            animate={{ width: [`${w - 14}%`, `${w}%`, `${w - 8}%`] }}
+                            animate={{
+                              width: [`${w - 14}%`, `${w}%`, `${w - 8}%`],
+                            }}
                             transition={{
                               duration: 3 + idx,
                               repeat: Infinity,
@@ -1218,12 +1246,15 @@ export default function QuranTranslationLandingPage() {
                       {heroCards.map((item) => (
                         <div
                           key={item.label}
-                          className="rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-4"
+                          className="flex min-h-[108px] flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-2 py-3 sm:min-h-[120px] sm:p-4"
                         >
-                          <div className="text-sm font-bold sm:text-lg" style={{ color: ACCENT }}>
+                          <div
+                            className="text-[13px] font-bold leading-tight sm:text-lg"
+                            style={{ color: ACCENT }}
+                          >
                             {item.value}
                           </div>
-                          <div className="mt-1 text-[11px] text-white/60 sm:text-xs">
+                          <div className="mt-2 text-[10px] leading-4 text-white/65 sm:text-xs sm:leading-5">
                             {item.label}
                           </div>
                         </div>
@@ -1247,7 +1278,9 @@ export default function QuranTranslationLandingPage() {
                         <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 sm:h-11 sm:w-11">
                           <Icon className="h-5 w-5" style={{ color: ACCENT }} />
                         </div>
-                        <div className="text-sm font-bold text-white sm:text-base">{item.title}</div>
+                        <div className="text-sm font-bold text-white sm:text-base">
+                          {item.title}
+                        </div>
                       </div>
                     </div>
                   );
@@ -1264,7 +1297,10 @@ export default function QuranTranslationLandingPage() {
               variants={fadeUp}
               className="mb-8 text-center"
             >
-              <LargeSectionBadge icon={BookOpen} text="A Global Quranic Identity" />
+              <LargeSectionBadge
+                icon={BookOpen}
+                text="A Global Quranic Identity"
+              />
             </motion.div>
 
             <div className="space-y-6">
@@ -1297,7 +1333,10 @@ export default function QuranTranslationLandingPage() {
 
           <section className="py-8 lg:py-12">
             <div className="mb-6 text-center">
-              <LargeSectionBadge icon={Building2} text="Execution & Supervision" />
+              <LargeSectionBadge
+                icon={Building2}
+                text="Execution & Supervision"
+              />
             </div>
 
             <motion.div
@@ -1319,15 +1358,31 @@ export default function QuranTranslationLandingPage() {
                         Trusted Executive Partnership
                       </h2>
                       <p className="mt-5 text-base leading-8 text-white/75 sm:text-lg">
-                        The <span className="font-bold text-white">Sana Quranic Channels</span> project is executed by <span className="font-bold" style={{ color: ACCENT }}>Saudi Jordanian Satellite Broadcasting Company (JASCO)</span> in Amman, Jordan, with leading expertise in media production and broadcasting.
+                        The{" "}
+                        <span className="font-bold text-white">
+                          Sana Quranic Channels
+                        </span>{" "}
+                        project is executed by{" "}
+                        <span
+                          className="font-bold"
+                          style={{ color: ACCENT }}
+                        >
+                          Saudi Jordanian Satellite Broadcasting Company (JASCO)
+                        </span>{" "}
+                        in Amman, Jordan, with leading expertise in media
+                        production and broadcasting.
                       </p>
                     </div>
                   </div>
 
                   <div className="rounded-[1.8rem] border border-white/10 bg-[rgba(17,24,39,0.70)] p-4 sm:p-6">
                     <div className="flex h-full flex-col justify-center rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5">
-                      <div className="text-sm text-white/60">Official website</div>
-                      <div className="mt-2 text-xl font-bold sm:text-2xl">Jasco Media City</div>
+                      <div className="text-sm text-white/60">
+                        Official website
+                      </div>
+                      <div className="mt-2 text-xl font-bold sm:text-2xl">
+                        Jasco Media City
+                      </div>
                       <a
                         href="https://jascomediacity.net/"
                         target="_blank"
@@ -1357,7 +1412,9 @@ export default function QuranTranslationLandingPage() {
                 Sana... A Message for All Worlds
               </h2>
               <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-white/70 sm:text-lg">
-                A Quranic platform that uses the latest methods to deliver the meanings of the Holy Quran to the world through an approach that combines sound scholarship with modern technology.
+                A Quranic platform that uses the latest methods to deliver the
+                meanings of the Holy Quran to the world through an approach that
+                combines sound scholarship with modern technology.
               </p>
             </motion.div>
 
@@ -1387,7 +1444,9 @@ export default function QuranTranslationLandingPage() {
               className="mb-10 text-center"
             >
               {sectionBadge(Send, "Publishing & Reach Channels")}
-              <h2 className="mt-5 text-2xl font-black sm:text-4xl lg:text-5xl">Multiple Presence Channels</h2>
+              <h2 className="mt-5 text-2xl font-black sm:text-4xl lg:text-5xl">
+                Multiple Presence Channels
+              </h2>
             </motion.div>
 
             <div className="grid gap-5 lg:grid-cols-3">
@@ -1416,15 +1475,24 @@ export default function QuranTranslationLandingPage() {
               className="mb-10 text-center"
             >
               {sectionBadge(Crown, "Our Work")}
-              <h2 className="mt-5 text-2xl font-black sm:text-4xl lg:text-5xl">Samples of Our Work</h2>
+              <h2 className="mt-5 text-2xl font-black sm:text-4xl lg:text-5xl">
+                Samples of Our Work
+              </h2>
               <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-white/70 sm:text-lg">
-                Beautiful Quran recitations and translations of Quran meanings into different world languages — Sana... A Message for All Worlds.
+                Beautiful Quran recitations and translations of Quran meanings
+                into different world languages — Sana... A Message for All
+                Worlds.
               </p>
             </motion.div>
 
             <div className="grid gap-5 lg:grid-cols-3">
               {portfolioVideos.map((video, i) => (
-                <ProtectedHlsVideoCard key={video} video={video} index={i} isMobile={isMobile} />
+                <ProtectedHlsVideoCard
+                  key={video}
+                  video={video}
+                  index={i}
+                  isMobile={isMobile}
+                />
               ))}
             </div>
           </section>
@@ -1442,7 +1510,9 @@ export default function QuranTranslationLandingPage() {
                 The Project’s Impact and Reach Around the World
               </h2>
               <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-white/70 sm:text-lg">
-                A global Quranic message that provides trusted translations, offers a moving experience, and helps deliver the meanings of the Holy Quran into homes around the world.
+                A global Quranic message that provides trusted translations,
+                offers a moving experience, and helps deliver the meanings of
+                the Holy Quran into homes around the world.
               </p>
             </motion.div>
 
@@ -1472,9 +1542,13 @@ export default function QuranTranslationLandingPage() {
               className="mb-10 text-center"
             >
               {sectionBadge(Users, "Success Partners")}
-              <h2 className="mt-5 text-2xl font-black sm:text-4xl lg:text-5xl">Success Built Through Collaboration</h2>
+              <h2 className="mt-5 text-2xl font-black sm:text-4xl lg:text-5xl">
+                Success Built Through Collaboration
+              </h2>
               <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-white/70 sm:text-lg">
-                The project achieved its success thanks to the cooperation of distinguished institutions, including scholarly, media, production, and volunteer contributors.
+                The project achieved its success thanks to the cooperation of
+                distinguished institutions, including scholarly, media,
+                production, and volunteer contributors.
               </p>
             </motion.div>
 
@@ -1507,12 +1581,17 @@ export default function QuranTranslationLandingPage() {
                   className="inline-flex max-w-full items-center gap-3 rounded-full border border-white/10 bg-white/10 px-5 py-3 text-base font-semibold backdrop-blur-md shadow-[0_6px_16px_rgba(0,0,0,0.12)] sm:px-7 sm:py-4 sm:text-lg"
                   style={{ color: ACCENT }}
                 >
-                  <Sparkles className="h-5 w-5 shrink-0" style={{ color: ACCENT }} />
+                  <Sparkles
+                    className="h-5 w-5 shrink-0"
+                    style={{ color: ACCENT }}
+                  />
                   <span>Contact Us</span>
                 </div>
 
                 <p className="mx-auto mt-5 max-w-4xl text-base leading-8 text-white/75 sm:text-lg">
-                  Sana is a global dawah message, and we are always pleased to receive your questions, suggestions, and partnership opportunities in a clear and direct manner.
+                  Sana is a global dawah message, and we are always pleased to
+                  receive your questions, suggestions, and partnership
+                  opportunities in a clear and direct manner.
                 </p>
               </div>
 
@@ -1521,10 +1600,13 @@ export default function QuranTranslationLandingPage() {
               >
                 <div className="rounded-[2rem] border border-white/10 bg-[rgba(17,24,39,0.70)] p-4 sm:p-6">
                   <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-4 sm:p-5">
-                    <div className="mb-4 text-xl font-bold sm:text-2xl">Get in Touch</div>
+                    <div className="mb-4 text-xl font-bold sm:text-2xl">
+                      Get in Touch
+                    </div>
                     <div className="space-y-3 text-white/75">
                       <div className="rounded-2xl bg-white/5 px-4 py-3 text-sm sm:text-base">
-                        Our team will be happy to assist you and respond as soon as possible.
+                        Our team will be happy to assist you and respond as soon
+                        as possible.
                       </div>
                       <a
                         href="mailto:snachannel159@gmail.com"
@@ -1541,7 +1623,9 @@ export default function QuranTranslationLandingPage() {
           </section>
 
           <footer className="pb-8 pt-4 sm:pb-10">
-            <div className={`rounded-[2rem] px-4 py-6 sm:px-6 sm:py-8 lg:px-10 ${glass}`}>
+            <div
+              className={`rounded-[2rem] px-4 py-6 sm:px-6 sm:py-8 lg:px-10 ${glass}`}
+            >
               <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr_1fr]">
                 <div
                   className={`rounded-[1.8rem] border border-white/10 p-4 text-center sm:p-6 ${INNER_GRADIENT}`}
@@ -1562,18 +1646,27 @@ export default function QuranTranslationLandingPage() {
                     </span>
                   </div>
 
-                  <div className="mt-4 text-2xl font-black sm:text-3xl" style={{ color: ACCENT }}>
+                  <div
+                    className="mt-4 text-2xl font-black sm:text-3xl"
+                    style={{ color: ACCENT }}
+                  >
                     Sana... A Message for All Worlds
                   </div>
 
                   <p className="mx-auto mt-4 max-w-xl rounded-[1.4rem] border border-[#D6C3A1]/20 bg-[linear-gradient(135deg,rgba(17,24,39,0.74)_0%,rgba(30,41,59,0.68)_100%)] px-4 py-4 text-sm leading-7 text-white/90 sm:px-5 sm:text-base sm:leading-8">
-                    Audio and visual channels for translations of Quran meanings in all global languages, as a waqf project that combines beauty of presentation, accuracy of meaning, and sincerity of message.
+                    Audio and visual channels for translations of Quran meanings
+                    in all global languages, as a waqf project that combines
+                    beauty of presentation, accuracy of meaning, and sincerity
+                    of message.
                   </p>
                 </div>
 
                 <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-4 sm:p-5">
                   <div className="mb-4 flex items-center gap-2 text-base font-bold text-white sm:text-lg">
-                    <MessageCircle className="h-5 w-5" style={{ color: ACCENT }} />
+                    <MessageCircle
+                      className="h-5 w-5"
+                      style={{ color: ACCENT }}
+                    />
                     Our Details
                   </div>
 
@@ -1582,12 +1675,18 @@ export default function QuranTranslationLandingPage() {
                       href="mailto:snachannel159@gmail.com"
                       className="flex items-center gap-3 break-all rounded-2xl border border-white/10 bg-[rgba(17,24,39,0.50)] px-4 py-3 text-sm transition hover:bg-white/10 sm:text-base"
                     >
-                      <Mail className="h-4 w-4 shrink-0" style={{ color: ACCENT }} />
+                      <Mail
+                        className="h-4 w-4 shrink-0"
+                        style={{ color: ACCENT }}
+                      />
                       snachannel159@gmail.com
                     </a>
 
                     <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[rgba(17,24,39,0.50)] px-4 py-3 text-sm sm:text-base">
-                      <MapPin className="h-4 w-4 shrink-0" style={{ color: ACCENT }} />
+                      <MapPin
+                        className="h-4 w-4 shrink-0"
+                        style={{ color: ACCENT }}
+                      />
                       Amman - Jordan
                     </div>
                   </div>
@@ -1617,7 +1716,8 @@ export default function QuranTranslationLandingPage() {
 
                   <div className="rounded-[1.4rem] border border-white/10 bg-[rgba(17,24,39,0.45)] p-4">
                     <p className="mb-4 text-sm leading-7 text-white/65">
-                      Download the app and start following Quranic content easily through the official platforms.
+                      Download the app and start following Quranic content
+                      easily through the official platforms.
                     </p>
 
                     <div className="grid gap-3 md:grid-cols-2">
@@ -1660,7 +1760,8 @@ export default function QuranTranslationLandingPage() {
                           <span style={{ color: ACCENT }}>★</span> 4.9 rating
                         </span>
                         <span className="flex items-center gap-1.5">
-                          <span style={{ color: ACCENT }}>🌍</span> 100+ countries
+                          <span style={{ color: ACCENT }}>🌍</span> 100+
+                          countries
                         </span>
                       </div>
 
