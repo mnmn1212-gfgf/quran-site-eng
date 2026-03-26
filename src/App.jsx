@@ -1693,7 +1693,7 @@ export default function QuranTranslationLandingPage() {
 
                   <div className="mt-5 rounded-[1.4rem] border border-white/10 bg-[rgba(17,24,39,0.45)] p-4">
                     <a
-                      href="https://www.facebook.com/share/1FVbmggbzc/"
+                      href="https://www.facebook.com/share/1Aknq4ChQg/"
                       target="_blank"
                       rel="noreferrer"
                       className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 py-3 text-sm font-semibold text-white transition hover:scale-[1.01] hover:bg-white/10"
