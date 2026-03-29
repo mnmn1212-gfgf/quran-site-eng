@@ -1670,7 +1670,6 @@ export default function QuranTranslationLandingPage() {
                 <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-4 sm:p-5 text-center flex h-full flex-col items-center justify-center">
                   <div className="mb-5 flex flex-col items-center justify-center gap-3 text-white">
                     <div className="relative flex h-16 w-16 items-center justify-center rounded-[1.35rem] border border-[#D6C3A1]/20 bg-[linear-gradient(135deg,rgba(214,195,161,0.14)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0_0_24px_rgba(214,195,161,0.12)] backdrop-blur-md">
-                      <div className="absolute inset-[6px] rounded-[1rem] border border-white/10 bg-[rgba(17,24,39,0.55)]" />
                       <MessageCircle
                         className="relative z-10 h-7 w-7 sm:h-8 sm:w-8"
                         style={{ color: ACCENT }}
@@ -1722,7 +1721,6 @@ export default function QuranTranslationLandingPage() {
                 <div className="rounded-[1.8rem] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.04))] p-4 backdrop-blur-md sm:p-5 text-center flex h-full flex-col items-center justify-center">
                   <div className="mb-5 flex flex-col items-center justify-center gap-3 text-white">
                     <div className="relative flex h-16 w-16 items-center justify-center rounded-[1.35rem] border border-[#D6C3A1]/20 bg-[linear-gradient(135deg,rgba(214,195,161,0.14)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0_0_24px_rgba(214,195,161,0.12)] backdrop-blur-md">
-                      <div className="absolute inset-[6px] rounded-[1rem] border border-white/10 bg-[rgba(17,24,39,0.55)]" />
                       <Link2
                         className="relative z-10 h-7 w-7 sm:h-8 sm:w-8"
                         style={{ color: ACCENT }}
