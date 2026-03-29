@@ -1210,7 +1210,7 @@ export default function QuranTranslationLandingPage() {
                         Current language
                       </p>
                       <h3 className="mt-1 text-xl font-bold sm:text-2xl">
-                        Quran in Arabic
+                        The Quran in English
                       </h3>
                     </div>
                     <div className="w-fit rounded-2xl border border-[#D6C3A1]/25 bg-[#D6C3A1]/12 px-4 py-2 text-xs text-[#F5EBDD] sm:text-sm">
