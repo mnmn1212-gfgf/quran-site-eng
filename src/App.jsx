@@ -1634,43 +1634,48 @@ export default function QuranTranslationLandingPage() {
                 <div
                   className={`rounded-[1.8rem] border border-white/10 p-4 text-center sm:p-6 ${INNER_GRADIENT}`}
                 >
-                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-white/15 bg-white/10 shadow-[0_0_18px_rgba(255,255,255,0.06)] backdrop-blur-md sm:h-24 sm:w-24">
-                    <img
-                      src={sanaLogo}
-                      alt="Sana logo"
-                      className="h-14 w-14 object-contain sm:h-16 sm:w-16"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
+                  <div className="flex h-full min-h-[420px] flex-col items-center justify-center">
+                    <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-white/15 bg-white/10 shadow-[0_0_18px_rgba(255,255,255,0.06)] backdrop-blur-md sm:h-24 sm:w-24">
+                      <img
+                        src={sanaLogo}
+                        alt="Sana logo"
+                        className="h-14 w-14 object-contain sm:h-16 sm:w-16"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
 
-                  <div className="mt-4">
-                    <span className="inline-flex rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs text-white/90 sm:px-5 sm:text-sm">
-                      Sana Quranic Channels
-                    </span>
-                  </div>
+                    <div className="mt-4">
+                      <span className="inline-flex rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs text-white/90 sm:px-5 sm:text-sm">
+                        Sana Quranic Channels
+                      </span>
+                    </div>
 
-                  <div
-                    className="mt-4 text-2xl font-black sm:text-3xl"
-                    style={{ color: ACCENT }}
-                  >
-                    Sana... A Message for All Worlds
-                  </div>
+                    <div
+                      className="mt-4 text-2xl font-black sm:text-3xl"
+                      style={{ color: ACCENT }}
+                    >
+                      Sana... A Message for All Worlds
+                    </div>
 
-                  <p className="mx-auto mt-4 max-w-xl rounded-[1.4rem] border border-[#D6C3A1]/20 bg-[linear-gradient(135deg,rgba(17,24,39,0.74)_0%,rgba(30,41,59,0.68)_100%)] px-4 py-4 text-sm leading-7 text-white/90 sm:px-5 sm:text-base sm:leading-8">
-                    Audio and visual channels for translations of Quran meanings
-                    in all global languages, as a waqf project that combines
-                    beauty of presentation, accuracy of meaning, and sincerity
-                    of message.
-                  </p>
+                    <p className="mx-auto mt-4 max-w-xl rounded-[1.4rem] border border-[#D6C3A1]/20 bg-[linear-gradient(135deg,rgba(17,24,39,0.74)_0%,rgba(30,41,59,0.68)_100%)] px-4 py-4 text-sm leading-7 text-white/90 sm:px-5 sm:text-base sm:leading-8">
+                      Audio and visual channels for translations of Quran meanings
+                      in all global languages, as a waqf project that combines
+                      beauty of presentation, accuracy of meaning, and sincerity
+                      of message.
+                    </p>
+                  </div>
                 </div>
 
                 <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-4 sm:p-5 text-center flex h-full flex-col items-center justify-center">
-                  <div className="mb-5 flex flex-col items-center justify-center gap-2 text-white">
-                    <MessageCircle
-                      className="h-7 w-7 sm:h-8 sm:w-8"
-                      style={{ color: ACCENT }}
-                    />
+                  <div className="mb-5 flex flex-col items-center justify-center gap-3 text-white">
+                    <div className="relative flex h-16 w-16 items-center justify-center rounded-[1.35rem] border border-[#D6C3A1]/20 bg-[linear-gradient(135deg,rgba(214,195,161,0.14)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0_0_24px_rgba(214,195,161,0.12)] backdrop-blur-md">
+                      <div className="absolute inset-[6px] rounded-[1rem] border border-white/10 bg-[rgba(17,24,39,0.55)]" />
+                      <MessageCircle
+                        className="relative z-10 h-7 w-7 sm:h-8 sm:w-8"
+                        style={{ color: ACCENT }}
+                      />
+                    </div>
                     <div className="text-lg font-bold sm:text-xl">
                       Our Details
                     </div>
@@ -1715,11 +1720,14 @@ export default function QuranTranslationLandingPage() {
                 </div>
 
                 <div className="rounded-[1.8rem] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.04))] p-4 backdrop-blur-md sm:p-5 text-center flex h-full flex-col items-center justify-center">
-                  <div className="mb-5 flex flex-col items-center justify-center gap-2 text-white">
-                    <Link2
-                      className="h-7 w-7 sm:h-8 sm:w-8"
-                      style={{ color: ACCENT }}
-                    />
+                  <div className="mb-5 flex flex-col items-center justify-center gap-3 text-white">
+                    <div className="relative flex h-16 w-16 items-center justify-center rounded-[1.35rem] border border-[#D6C3A1]/20 bg-[linear-gradient(135deg,rgba(214,195,161,0.14)_0%,rgba(255,255,255,0.08)_100%)] shadow-[0_0_24px_rgba(214,195,161,0.12)] backdrop-blur-md">
+                      <div className="absolute inset-[6px] rounded-[1rem] border border-white/10 bg-[rgba(17,24,39,0.55)]" />
+                      <Link2
+                        className="relative z-10 h-7 w-7 sm:h-8 sm:w-8"
+                        style={{ color: ACCENT }}
+                      />
+                    </div>
                     <div className="text-lg font-bold sm:text-xl">
                       App Links
                     </div>
