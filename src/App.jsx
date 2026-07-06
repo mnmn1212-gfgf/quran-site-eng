@@ -1002,9 +1002,9 @@ export default function QuranTranslationLandingPage() {
     <LazyMotion features={domAnimation}>
       <div
         dir="ltr"
-        className="relative min-h-screen overflow-hidden bg-[#020817] text-white"
+        className="relative min-h-screen overflow-hidden bg-transparent text-white"
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(245,198,106,0.16),transparent_30%),radial-gradient(circle_at_82%_18%,rgba(13,39,91,0.28),transparent_28%),radial-gradient(circle_at_20%_82%,rgba(88,24,48,0.24),transparent_30%),linear-gradient(180deg,#020817_0%,#071B3A_42%,#12091D_100%)]" />
+        <div className={`absolute inset-0 ${PREMIUM_GRADIENT}`} />
 
         {!isMobile && (
           <>
