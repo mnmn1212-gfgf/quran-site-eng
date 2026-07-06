@@ -40,6 +40,8 @@ const CTA_DARK = "#050D24";
 
 const PREMIUM_GRADIENT =
   "bg-[linear-gradient(135deg,rgba(5,13,36,0.96)_0%,rgba(13,39,91,0.94)_34%,rgba(88,24,48,0.90)_70%,rgba(184,134,57,0.84)_100%)]";
+const DARK_BACKGROUND_GRADIENT =
+  "bg-[linear-gradient(135deg,rgba(2,6,19,1)_0%,rgba(4,18,48,0.99)_34%,rgba(38,10,26,0.98)_70%,rgba(74,48,20,0.94)_100%)]";
 const OUTER_GRADIENT = PREMIUM_GRADIENT;
 const INNER_GRADIENT = PREMIUM_GRADIENT;
 
@@ -1002,14 +1004,14 @@ export default function QuranTranslationLandingPage() {
     <LazyMotion features={domAnimation}>
       <div
         dir="ltr"
-        className="relative min-h-screen overflow-hidden bg-transparent text-white"
+        className="relative min-h-screen overflow-hidden bg-[#020613] text-white"
       >
-        <div className={`absolute inset-0 ${PREMIUM_GRADIENT}`} />
+        <div className={`absolute inset-0 ${DARK_BACKGROUND_GRADIENT}`} />
 
         {!isMobile && (
           <>
             <motion.div
-              className="absolute -top-24 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-[#F5C66A]/12 blur-3xl"
+              className="absolute -top-24 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-[#F5C66A]/6 blur-3xl"
               animate={pulseGlow}
             />
             <div className="absolute inset-0 opacity-[0.06]">
